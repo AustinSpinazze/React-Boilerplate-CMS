@@ -7,7 +7,7 @@ import logo from '../../../images/NavLogo.png';
 const Navbar = props => {
   const { home, about, products, contact } = NAVBAR_LINKS;
   return (
-    <div className="nav-container">
+    <header className="nav-container">
       <nav className="navbar">
         <img className="logo" alt="Outer Rim Supply Co. Logo" src={logo} />
         <ul>
@@ -25,7 +25,7 @@ const Navbar = props => {
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
