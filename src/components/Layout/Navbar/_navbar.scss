@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.nav-container {
+  background-color: $catawba;
+  width: 100%;
+  height: 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    float: right;
+    margin: 0 1.25rem 0 0;
+  }
+  img,
+  li {
+    display: inline;
+    a {
+      color: $logo-text;
+      text-decoration: none;
+      padding: 0.875rem 1rem;
+    }
+  }
+}
+
+.logo {
+  margin: 0 0 0 1.25rem;
+}
