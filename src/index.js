@@ -2,7 +2,9 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+
 import './_index.scss';
 import App from './App';
 import ErrorBoundary from './utilities/ErrorBoundary';
@@ -14,13 +16,15 @@ targetModulesData.forEach(({ dataset, textContent }) => {
   const root = document.getElementById(`App--${dataset.moduleInstance}`);
   return ReactDOM.render(
     <ErrorBoundary>
-      <BrowserRouter>
-        <App
-          portalId={dataset.portalId}
-          moduleData={JSON.parse(textContent)}
-          moduleInstance={dataset.moduleInstance}
-        />
-      </BrowserRouter>
+      <HashRouter>
+        <RecoilRoot>
+          <App
+            portalId={dataset.portalId}
+            moduleData={JSON.parse(textContent)}
+            moduleInstance={dataset.moduleInstance}
+          />
+        </RecoilRoot>
+      </HashRouter>
     </ErrorBoundary>,
     root,
   );
